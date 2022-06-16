@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: user
+spec:
+  template:
+    spec:
+      containers:
+      - name: user
+        image: 1404000/client:1.0
+        command: ["python",  "clientAPI.py"]
+      restartPolicy: Never
+  backoffLimit: 4
